@@ -1,8 +1,15 @@
-# React + Vite
+# Estate-Agent-WebApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a client-side web application that enables users to search for properties.
 
-Currently, two official plugins are available:
+The application will be built using HTML, CSS and JS, along with the React Framework.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to set up and run the Web App
+
+Ensure you have installed npm (Node Package Manager) and added it to path.
+
+Clone the repository and open terminal in the project folder.
+Run npm install
+Run npm run dev
+Ctrl + Click on the provided link
+The Web Application will open in your default browser.
