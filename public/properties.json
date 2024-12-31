@@ -1,0 +1,116 @@
+{
+	"properties": [
+        {
+            "id":"prop1",
+			"type":"House",
+            "bedrooms":3,
+			"price":750000,
+			"tenure":"Freehold",
+			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
+			"picture":"src/assets/images/prop1/pic1.jpg",
+			"url":"properties/prop1",
+            "added": {
+                "month":"October",
+                "day":12,
+                "year":2024
+            }
+        },
+		{
+            "id":"prop2",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":399995,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+			"location":"Crofton Road, Orpington BR6",
+			"picture":"src/assets/images/prop2/pic1.jpg",
+			"url":"properties/prop2",
+            "added": {
+                "month":"September",
+                "day":14,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop3",
+			"type":"Flat",
+            "bedrooms":3,
+			"price":586000,
+			"tenure":"Freehold",
+			"description":"This shared apartment is ideally located for students attending the University of Birmingham, which is a short walk away. Tenants can enjoy 3 spacious bedrooms, a modern bathroom, and an open-plan kitchen/living area. This accommodation is fully furnished with the student essentials, including double beds, storage, washing machine and more. Located in the student village of Selly Oak, this apartment has a good selection of supermarkets, shops, pubs and takeaways just nearby. Public transport is also easily accessible with a local train station and several bus routes nearby.",
+			"location":"Bristol Road, Selly Oak, Birmingham, B29",
+			"picture":"src/assets/images/prop3/pic1.jpg",
+			"url":"properties/prop3",
+            "added": {
+                "month":"December",
+                "day":5,
+                "year":2023
+            }
+        },
+        {
+            "id":"prop4",
+			"type":"House",
+            "bedrooms":5,
+			"price":1650000,
+			"tenure":"Freehold",
+			"description":"This detached house, built in 1960, boasts generous living space and blends modern finishes with classic architecture, offering a meticulously maintained space with no expense spared. A highlight is the spectacular outdoor living area, featuring a heated pool, Jacuzzi, and a fully equipped bar and BBQ room with fridges, an ice machine, draft beer pumps, a biofuel fireplace, and an outdoor TV. The private, secure garden is surrounded by woodland, perfect for al fresco dining or relaxing in the sun. Located in peaceful Scotsdale Close, it offers a tranquil retreat with easy access to local amenities and Central London transport links.",
+			"location":"Scotsdale Close, Petts Wood BR5",
+			"picture":"src/assets/images/prop4/pic1.jpg",
+			"url":"properties/prop4",
+            "added": {
+                "month":"June",
+                "day":15,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop5",
+			"type":"House",
+            "bedrooms":5,
+			"price":695000,
+			"tenure":"Freehold",
+			"description":"This well-located five-bedroom executive family home is situated in a sought-after development. It features a spacious kitchen/diner with integrated appliances, a utility room, and a large living room. The home includes modern family and en-suite bathrooms, fitted wardrobes in four bedrooms, and built-in desks in two. Additional highlights include a ground floor WC, single garage, and off-road parking. The south-facing rear garden is a great outdoor space, and the development offers a village green, cricket pitch, pavilion, and children's play area. It's ideally located near top-rated schools, including Bournville Village Primary and the University of Birmingham Secondary School.",
+			"location":"Woodlands Drive, Selly Oak, Birmingham B29",
+			"picture":"src/assets/images/prop5/pic1.jpg",
+			"url":"properties/prop5",
+            "added": {
+                "month":"October",
+                "day":22,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop6",
+			"type":"House",
+            "bedrooms":4,
+			"price":239500,
+			"tenure":"Freehold",
+			"description":"This stunning Grand Design-style home, set on a generous 0.8-acre plot, offers versatile open-plan living throughout. The property boasts an impressive master bedroom with a walk-in wardrobe and en-suite bathroom. Outside, you'll find a private pool and an artificial grass football pitch, ideal for family fun and entertaining. Additional features include electric gates, a CCTV system, video intercom, and security fencing for added peace of mind. Inside, there’s a games room, snug, and a family bathroom. Situated in a sought-after private location, this luxurious home must be viewed to truly appreciate its exceptional design and lifestyle appeal. Council tax: Band G.",
+			"location":"Old Road, Ruddington NG11",
+			"picture":"src/assets/images/prop6/pic1.jpg",
+			"url":"properties/prop6",
+            "added": {
+                "month":"November",
+                "day":4,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop7",
+			"type":"Flat",
+            "bedrooms":1,
+			"price":350000,
+			"tenure":"Freehold",
+			"description":"A beautifully presented, spacious one-bedroom apartment with great ceiling height and a lovely kitchen, situated on the fourth floor of this purpose built block set within easy reach of both Camden and Kentish Town. You enter into the property's entrance hall with the living room to the right, which features a Juliette balcony. The kitchen is a great size and is a real hub of the property. Completing the accommodation is a spacious bedroom and a modern bathroom. Externally, there is a communal courtyard.",
+			"location":"Royal College Street, Camden NW1",
+			"picture":"src/assets/images/prop7/pic1.jpg",
+			"url":"properties/prop7",
+            "added": {
+                "month":"March",
+                "day":26,
+                "year":2024
+            }
+        }
+    ]
+}
