@@ -1,31 +1,44 @@
+.banner {
+  margin-top: 5rem;
+  background-image: url('../assets/images/banner.jpeg');
+  background-size: cover;
+  padding: 8rem;
+}
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 5.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 3px rgba(0,0,0,1);
+}
+
+.description {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 3px rgba(0,0,0,1);
+}
+
+.browseLink {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.browseLink:hover {
+  background-color: #2980b9;
+} 
   
-  .title {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-  }
-  
-  .description {
-    color: #34495e;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-  }
-  
-  .browseLink {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .browseLink:hover {
-    background-color: #2980b9;
-  } 

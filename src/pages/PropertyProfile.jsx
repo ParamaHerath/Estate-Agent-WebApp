@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import Header from '../components/Header';
 import propertyData from '../assets/properties.json'
 import styles from './PropertyProfile.module.css'
 
@@ -11,25 +12,30 @@ function PropertyProfile() {
   }
 
   return (
-    <div className={styles.container}>
-      <div>
-        <Link to="/search" className={styles.backLink}>⬅️ Back to Search</Link>
-      </div>
-      <div className={styles.propertyProfile}>
-        <div className={styles.imageContainer}>
-          <img src={`/${property.picture}`} alt={`Main image of ${property.id}`} />
+    <>
+      <Header />
+      <div className={styles.page}>
+        <div className={styles.container}>
+          <div>
+            <Link to="/search" className={styles.backLink}>⬅️ Back to Search</Link>
+          </div>
+          <div className={styles.propertyProfile}>
+            <div className={styles.imageContainer}>
+              <img src={`/${property.picture}`} alt={`Main image of ${property.id}`} />
+            </div>
+            <div className={styles.profileInfo}>
+              <h2>Property Profile</h2>
+              <p><strong>ID:</strong> {property.id}</p>
+              <p><strong>Type:</strong> {property.type}</p>
+              <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
+              <p><strong>Price:</strong> {"£ " + property.price}</p>
+              <p><strong>Location:</strong> {property.location}</p>
+              <p><strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.profileInfo}>
-          <h2>Property Profile</h2>
-          <p><strong>ID:</strong> {property.id}</p>
-          <p><strong>Type:</strong> {property.type}</p>
-          <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
-          <p><strong>Price:</strong> {"£ " + property.price}</p>
-          <p><strong>Location:</strong> {property.location}</p>
-          <p><strong>Added:</strong> {property.added.month} {property.added.day}, {property.added.year}</p>
-        </div>
       </div>
-    </div>
+    </>
   );
 }
 

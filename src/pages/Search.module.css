@@ -1,0 +1,33 @@
+.page {
+  margin-top: 5rem;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.searchPage h1 {
+  /* text-align: center; */
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.results {
+  margin-top: 30px;
+}
+
+.propertyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.noResults {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-top: 40px;
+} 

@@ -1,17 +1,29 @@
 import { Link } from 'react-router-dom'
+import Header from '../components/Header';
 import styles from './Home.module.css'
 
 function Home() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Estate Agent WebApp</h1>
-      <p className={styles.description}>
-        Welcome to the Estate Agent WebApp. This is the home page.
-      </p>
-      <Link to="/search" className={styles.browseLink}>
-        Browse Property
-      </Link>
-    </div>
+    <>
+      <Header />
+      <div className={styles.banner}>
+        <div className={styles.container}>
+          <h1 className={styles.title}>Hey there!</h1>
+          <p className={styles.description}>
+           <b>Looking for your dream home?</b><br></br>
+          </p>
+          <p className={styles.description}>
+           Find the perfect flat or house that suits your needs, lifestyle, and budget. Whether you're buying, renting, or just exploring, we've got listings for every taste and preference.<br></br>
+          </p>
+          <p className={styles.description}> 
+           <b>Start your search today and discover the possibilities!</b>
+          </p>
+          <Link to="/search" className={styles.browseLink}>
+            Let's find your home!
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
 
