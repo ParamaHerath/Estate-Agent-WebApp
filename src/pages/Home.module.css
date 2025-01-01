@@ -1,0 +1,31 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .title {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+  
+  .description {
+    color: #34495e;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .browseLink {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .browseLink:hover {
+    background-color: #2980b9;
+  } 
