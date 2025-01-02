@@ -1,51 +1,55 @@
+.page {
+  margin-top: 5rem;
+}
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .backLink {
-    display: inline-block;
-    color: #2c3e50;
-    text-decoration: none;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-  }
-  
-  .backLink:hover {
-    color: #3498db;
-  }
-  
-  .propertyProfile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .imageContainer {
-    width: 100%;
-  }
-  
-  .imageContainer img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .profileInfo {
-    padding: 1rem;
-  }
-  
-  .profileInfo h2 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-  }
-  
-  .profileInfo p {
-    margin-bottom: 1rem;
-    color: #34495e;
-  } 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: #2c3e50;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.backLink:hover {
+  color: #3498db;
+}
+
+.propertyProfile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.profileInfo {
+  padding: 1rem;
+}
+
+.profileInfo h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.profileInfo p {
+  margin-bottom: 1rem;
+  color: #34495e;
+} 
