@@ -1,0 +1,13 @@
+.footer {
+  background-color: #e7e7e7;
+  color: black;
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
