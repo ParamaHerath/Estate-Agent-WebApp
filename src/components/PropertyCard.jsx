@@ -11,9 +11,6 @@ function PropertyCard({ property }) {
         <h3 className={styles.price}>£{price.toLocaleString()}</h3>
         <p className={styles.type}>{type} - {bedrooms} bedrooms</p>
         <p className={styles.location}>{location}</p>
-        <p className={styles.description}>
-          {description.substring(0, 150)}...
-        </p>
         <p className={styles.date}>Added: {added.day} {added.month} {added.year}</p>
         <Link to={`/property/${id}`} className={styles.viewButton}>
           View Property
