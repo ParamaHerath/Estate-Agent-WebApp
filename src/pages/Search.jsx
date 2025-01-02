@@ -58,24 +58,33 @@ function Search() {
     <>
       <Header />
       <div className={styles.page}>
-        <div className={styles.container}>
-          <h1>Your Dream Home Awaits – Start Searching Now!</h1>
-          <p><b>It's really just a few clicks away!</b></p>
-          <p>
-            Browse through a wide range of houses and flats, and use our smart search filters to find the perfect match for your needs, whether you’re buying or renting. Start your journey today and make your dream home a reality!
-          </p>
-          <SearchForm onSearch={handleSearch} />
-          <div className={styles.results}>
-            {filteredProperties.length === 0 ? (
-              <p className={styles.noResults}>No properties found matching your criteria</p>
-            ) : (
-              <div className={styles.propertyGrid}>
-                {filteredProperties.map(property => (
-                  <PropertyCard key={property.id} property={property} />
-                ))}
-              </div>
-            )}
-          </div>
+        <div className={styles.layout}>
+          <aside className={styles.sidebar}>
+            <SearchForm onSearch={handleSearch} />
+          </aside>
+          
+          <main className={styles.mainContent}>
+            <div className={styles.headerSection}>
+              <h1>Click & Search - Find Your Ideal Home!</h1>
+              <p><b>Finding your dream home has never been easier!</b></p>
+              <p>
+                With our smart filters and curated listings, turning your clicks into bricks has never been easier! Use the form on the left to help you find your perfect home. Whether you're buying or renting, from cozy flats to spacious houses, we’ll help make your dream home a reality with just a few clicks!
+              </p>
+            </div>
+
+            <div className={styles.resultsSection}>
+              <h2 className={styles.subheading}>Search Results</h2>
+              {filteredProperties.length === 0 ? (
+                <p className={styles.noResults}>No properties found matching your criteria!</p>
+              ) : (
+                <div className={styles.propertyGrid}>
+                  {filteredProperties.map(property => (
+                    <PropertyCard key={property.id} property={property} />
+                  ))}
+                </div>
+              )}
+            </div>
+          </main>
         </div>
       </div>
       <Footer />
