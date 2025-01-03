@@ -10,11 +10,10 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          Estate Agent WebApp
+          NestQuest
         </Link>
         <nav className={styles.nav}>
           <Link to="/search" className={styles.navLink}>Browse</Link>
-          <Link to="/contact" className={styles.navLink}>Contact</Link>
           <button 
             className={styles.navLink} 
             onClick={() => setIsFavoritesOpen(true)}

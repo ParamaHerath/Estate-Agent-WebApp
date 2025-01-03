@@ -62,21 +62,3 @@
   font-size: 1.2rem;
   margin-top: 40px;
 }
-
-/* Custom scrollbar styles */
-.resultsSection::-webkit-scrollbar {
-  width: 8px;
-}
-
-.resultsSection::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.resultsSection::-webkit-scrollbar-thumb {
-  background: #d1d1d1;
-  border-radius: 4px;
-}
-
-.resultsSection::-webkit-scrollbar-thumb:hover {
-  background: #a7a7a7;
-} 
