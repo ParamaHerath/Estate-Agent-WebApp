@@ -4,7 +4,7 @@ import FavPropertyCard from './FavPropertyCard';
 import styles from './FavoritesDropdown.module.css';
 
 function FavoritesDropdown({ isOpen, onClose }) {
-  const { favorites } = useFavorites();
+  const { favorites, setFavorites } = useFavorites();
   const dropdownRef = useRef();
 
   useEffect(() => {
@@ -28,7 +28,17 @@ function FavoritesDropdown({ isOpen, onClose }) {
   return (
     <div className={styles.overlay}>
       <div ref={dropdownRef} className={styles.dropdown}>
-        <h2>Favourites</h2>
+        <div className={styles.header}>
+          <h2>Favourites</h2>
+          {favorites.length > 0 && (
+            <button 
+              className={styles.clearButton}
+              onClick={() => setFavorites([])}
+            >
+              Clear All
+            </button>
+          )}
+        </div>
         <div className={styles.content}>
           {favorites.length === 0 ? (
             <p className={styles.noFavorites}>No favorites added yet</p>
