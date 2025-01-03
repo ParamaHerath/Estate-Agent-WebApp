@@ -19,9 +19,13 @@ function TabPanel({ children, value, index }) {
 
 function PropertyProfile() {
   const [tabValue, setTabValue] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(0);
   const { id } = useParams();
   const property = propertyData.properties.find(p => p.id === id);
   const { isFavorite, toggleFavorite } = useFavorites();
+
+  // Generate array of image paths
+  const images = Array.from({ length: 8 }, (_, i) => `src/assets/images/${property.id}/pic${i + 1}.jpeg`);
 
   if (!property) {
     return <div>Error! - Property not found!</div>
@@ -41,18 +45,31 @@ function PropertyProfile() {
           </div>
           
           <div className={styles.propertyCard}>
-            <div className={styles.imageContainer}>
-              <img src={`/${property.picture}`} alt={`Main image of ${property.id}`} />
-              <button 
-                className={styles.favoriteButton}
-                onClick={() => toggleFavorite(property)}
-              >
-                {isFavorite(id) ? (
-                  <FavoriteIcon className={styles.favoriteIcon} />
-                ) : (
-                  <FavoriteBorderIcon className={styles.favoriteIconOutline} />
-                )}
-              </button>
+            <div className={styles.imageSection}>
+              <div className={styles.mainImageContainer}>
+                <img src={`/${images[selectedImage]}`} alt={`Main view of ${property.id}`} />
+                <button 
+                  className={styles.favoriteButton}
+                  onClick={() => toggleFavorite(property)}
+                >
+                  {isFavorite(id) ? (
+                    <FavoriteIcon className={styles.favoriteIcon} />
+                  ) : (
+                    <FavoriteBorderIcon className={styles.favoriteIconOutline} />
+                  )}
+                </button>
+              </div>
+              <div className={styles.thumbnailStrip}>
+                {images.map((image, index) => (
+                  <div 
+                    key={index}
+                    className={`${styles.thumbnail} ${selectedImage === index ? styles.selectedThumbnail : ''}`}
+                    onClick={() => setSelectedImage(index)}
+                  >
+                    <img src={`/${image}`} alt={`View ${index + 1} of ${property.id}`} />
+                  </div>
+                ))}
+              </div>
             </div>
             <div className={styles.mainInfo}>
               <h2 className={styles.price}>£{property.price.toLocaleString()}</h2>
