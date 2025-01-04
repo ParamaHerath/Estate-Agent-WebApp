@@ -8,6 +8,7 @@ import { useFavorites } from '../context/FavoritesContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from './PropertyProfile.module.css';
+import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 function TabPanel({ children, value, index }) {
   return (
@@ -33,6 +34,16 @@ function PropertyProfile() {
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
+  };
+
+  const mapContainerStyle = {
+    width: '100%',
+    height: '500px'
+  };
+
+  const center = {
+    lat: property.coordinates.lat,
+    lng: property.coordinates.lng
   };
 
   return (
@@ -102,7 +113,18 @@ function PropertyProfile() {
 
             <TabPanel value={tabValue} index={2}>
               <div className={styles.map}>
-                <p>Google Maps integration coming soon...</p>
+                <LoadScript googleMapsApiKey="AIzaSyDKJKDcTMgfwZ1tFT0EbrwPSNixIaB3GWw">
+                  <GoogleMap
+                    mapContainerStyle={mapContainerStyle}
+                    center={center}
+                    zoom={15}
+                  >
+                    <MarkerF
+                      position={center}
+                      title={property.location}
+                    />
+                  </GoogleMap>
+                </LoadScript>
               </div>
             </TabPanel>
           </div>
