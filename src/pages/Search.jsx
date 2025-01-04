@@ -12,6 +12,9 @@ function Search() {
 
   const handleSearch = (filters) => {
     let results = properties.filter(property => {
+      // Availability filter
+      if (filters.availability !== 'any' && property.tenure !== filters.availability) return false;
+
       // Type filter
       if (filters.type !== 'any' && property.type !== filters.type) return false;
 

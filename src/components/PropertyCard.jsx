@@ -6,7 +6,7 @@ import styles from './PropertyCard.module.css';
 
 function PropertyCard({ property }) {
   const { isFavorite, toggleFavorite } = useFavorites();
-  const { id, type, bedrooms, price, location, picture, added } = property;
+  const { id, type, bedrooms, price, location, picture, added, tenure } = property;
 
   return (
     <div className={styles.card}>
@@ -24,7 +24,10 @@ function PropertyCard({ property }) {
         </button>
       </div>
       <div className={styles.content}>
-        <h3 className={styles.price}>£{price.toLocaleString()}</h3>
+        <h3 className={styles.price}>
+          £{price.toLocaleString()}
+          {tenure === 'Leasehold' && <span className={styles.perMonth}> per month</span>}
+        </h3>
         <p className={styles.type}>{type} - {bedrooms} bedrooms</p>
         <p className={styles.location}>{location}</p>
         <p className={styles.date}>Added: {added.day} {added.month} {added.year}</p>

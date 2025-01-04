@@ -83,7 +83,10 @@ function PropertyProfile() {
               </div>
             </div>
             <div className={styles.mainInfo}>
-              <h2 className={styles.price}>£{property.price.toLocaleString()}</h2>
+              <h2 className={styles.price}>
+                £{property.price.toLocaleString()}
+                {property.tenure === 'Leasehold' && <span className={styles.perMonth}> per month</span>}
+              </h2>
               <p className={styles.type}>{property.type} - {property.bedrooms} bedrooms</p>
               <p className={styles.location}>{property.location}</p>
               <p className={styles.date}>Added: {property.added.month} {property.added.day}, {property.added.year}</p>

@@ -15,6 +15,7 @@ import styles from './SearchForm.module.css';
 
 function SearchForm({ onSearch }) {
   const [filters, setFilters] = useState({
+    availability: { value: 'any', label: 'Any' },
     type: { value: 'any', label: 'Any' },
     priceRange: [0, 2000000],
     minBedrooms: '',
@@ -23,6 +24,12 @@ function SearchForm({ onSearch }) {
     endDate: null,
     location: ''
   });
+
+  const availabilityOptions = [
+    { value: 'any', label: 'Any' },
+    { value: 'Freehold', label: 'For Sale' },
+    { value: 'Leasehold', label: 'For Rent' }
+  ];
 
   const propertyTypes = [
     { value: 'any', label: 'Any' },
@@ -41,6 +48,7 @@ function SearchForm({ onSearch }) {
     e.preventDefault();
     onSearch({
       ...filters,
+      availability: filters.availability.value,
       type: filters.type.value,
       minPrice: filters.priceRange[0],
       maxPrice: filters.priceRange[1]
@@ -49,6 +57,19 @@ function SearchForm({ onSearch }) {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      <Typography variant="body1">
+        Welcome to our filter search tool! Follow the steps below to narrow down your search and find the perfect property based on your preferences.
+      </Typography>
+      <div className={styles.formGroup}>
+        <Typography variant="subtitle1">Availability</Typography>
+        <Select
+          value={filters.availability}
+          onChange={(option) => handleChange('availability', option)}
+          options={availabilityOptions}
+          className={styles.select}
+        />
+      </div>
+
       <div className={styles.formGroup}>
         <Typography variant="subtitle1">Property Type</Typography>
         <Select
@@ -132,7 +153,7 @@ function SearchForm({ onSearch }) {
       </div>
 
       <div className={styles.formGroup}>
-        <Typography variant="subtitle1">Location/Postcode Area</Typography>
+        <Typography variant="subtitle1">Location or Postcode Area</Typography>
         <TextField
           fullWidth
           name="location"
