@@ -37,3 +37,10 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #7e7e7e;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    height: 6px;
+  }
+}

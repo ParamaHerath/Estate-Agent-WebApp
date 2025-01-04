@@ -64,3 +64,32 @@
   width: 100% !important;
   display: block;
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .form {
+    margin-top: 0.5rem;
+  }
+
+  .formGroup {
+    margin-bottom: 15px;
+  }
+
+  .formRow {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* Adjust input sizes for better fit */
+  .formGroup input,
+  .formGroup select,
+  :global(.MuiTextField-root) {
+    font-size: 0.9rem !important;
+  }
+
+  /* Adjust label sizes */
+  .formGroup label,
+  :global(.MuiFormLabel-root) {
+    font-size: 0.9rem !important;
+  }
+}
