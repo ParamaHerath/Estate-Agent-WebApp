@@ -22,6 +22,11 @@
   padding: 0 1rem;
 }
 
+/* Make the socials section narrower */
+.footerSection:last-child {
+  flex: 0.7;
+}
+
 .footerSection h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
@@ -58,6 +63,37 @@
   border-top: 1px solid #ccc;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .footerContent {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footerSection {
+    flex: calc(50% - 2rem);
+    min-width: 250px;
+  }
+
+  .footerSection:last-child {
+    flex: calc(50% - 2rem);
+  }
+
+  .footerSection h3 {
+    font-size: 1.1rem;
+  }
+
+  .socialIcons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile - existing styles */
 @media (max-width: 768px) {
   .footerContent {
     flex-direction: column;
@@ -66,9 +102,15 @@
 
   .footerSection {
     margin-bottom: 1.5rem;
+    flex: 100%;
+  }
+
+  .footerSection:last-child {
+    flex: 100%;
   }
 
   .socialIcons {
     justify-content: center;
+    flex-direction: row;
   }
 }

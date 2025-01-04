@@ -96,17 +96,73 @@ function PropertyProfile() {
           <div className={styles.tabsContainer}>
             <Box sx={{ borderBottom: '1rem', borderColor: 'divider' }}>
               <Tabs
-               value={tabValue}
-               onChange={handleTabChange}
-               sx={{
-                '& .MuiTabs-indicator': {
-                backgroundColor: '#000000',
-                height: 5}
-               }}
+                value={tabValue}
+                onChange={handleTabChange}
+                variant="fullWidth"
+                sx={{
+                  '& .MuiTabs-indicator': {
+                    backgroundColor: '#000000',
+                    height: 5
+                  },
+                  '& .MuiTab-root': {
+                    minWidth: {
+                      xs: '33.33%',
+                      sm: 'auto'
+                    }
+                  }
+                }}
               >
-                <Tab label="Description" sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '1.2rem', color: 'black !important', textTransform: 'none', padding: '1rem 2rem 1rem 2rem'}} />
-                <Tab label="Floor Plan" sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '1.2rem', color: 'black !important', textTransform: 'none', padding: '1rem 2rem 1rem 2rem'}} />
-                <Tab label="Map" sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '1.2rem', color: 'black !important', textTransform: 'none', padding: '1rem 2rem 1rem 2rem'}} />
+                <Tab 
+                  label="Description" 
+                  sx={{
+                    fontFamily: 'Poppins', 
+                    fontWeight: '700', 
+                    fontSize: {
+                      xs: '1rem',
+                      sm: '1.2rem'
+                    },
+                    color: 'black !important', 
+                    textTransform: 'none', 
+                    padding: {
+                      xs: '0.5rem',
+                      sm: '1rem 2rem'
+                    }
+                  }} 
+                />
+                <Tab 
+                  label="Floor Plan" 
+                  sx={{
+                    fontFamily: 'Poppins', 
+                    fontWeight: '700', 
+                    fontSize: {
+                      xs: '1rem',
+                      sm: '1.2rem'
+                    },
+                    color: 'black !important', 
+                    textTransform: 'none', 
+                    padding: {
+                      xs: '0.5rem',
+                      sm: '1rem 2rem'
+                    }
+                  }}
+                />
+                <Tab 
+                  label="Map" 
+                  sx={{
+                    fontFamily: 'Poppins', 
+                    fontWeight: '700', 
+                    fontSize: {
+                      xs: '1rem',
+                      sm: '1.2rem'
+                    },
+                    color: 'black !important', 
+                    textTransform: 'none', 
+                    padding: {
+                      xs: '0.5rem',
+                      sm: '1rem 2rem'
+                    }
+                  }}
+                />
               </Tabs>
             </Box>
 
