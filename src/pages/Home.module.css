@@ -2,16 +2,18 @@
   margin-top: 5rem;
   background-image: url('../assets/images/banner.png');
   background-size: cover;
+  background-position: center;
   min-height: calc(100vh - 5rem);
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center;     /* Vertical centering */
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 2rem;
 }
 
 .title {
@@ -44,5 +46,51 @@
 
 .browseLink:hover {
   transform: scale(1.025);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .browseLink {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .banner {
+    background-image: url('../assets/images/banner-mobile.png');
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .browseLink {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1.5rem;
+  }
 } 
   
