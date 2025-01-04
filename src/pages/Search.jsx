@@ -75,6 +75,10 @@ function Search() {
               </p>
             </div>
 
+            <div className={styles.sidebarMobile}>
+              <SearchForm onSearch={handleSearch} />
+            </div>
+
             <div className={styles.resultsSection}>
               <h2 className={styles.subheading}>Search Results</h2>
               {filteredProperties.length === 0 ? (

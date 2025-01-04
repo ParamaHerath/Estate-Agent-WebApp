@@ -61,6 +61,15 @@
   margin-top: 40px;
 }
 
+.sidebarMobile {
+  width: 25rem;
+  padding: 20px;
+  background-image: linear-gradient(180deg,rgba(119, 250, 178, 0.7), rgba(255, 228, 196, 0.7));
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+  display: none;
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .sidebar {
@@ -89,5 +98,86 @@
   .propertyGrid > * {
     max-width: 100%;
     margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebarMobile {
+    display: flex;
+    width: 100%;
+    order: 2;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .mainContent {
+    max-width: 100%;
+    padding: 1.5rem;
+    order: 1;
+  }
+
+  .headerSection h1 {
+    font-size: 2rem;
+  }
+
+  .headerSection p {
+    font-size: 1rem;
+  }
+
+  /* Ensure property cards stack nicely */
+  .propertyGrid > * {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .resultsSection {
+    order: 3;
+  }
+}@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: 2;
+    border-right: none;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .mainContent {
+    max-width: 100%;
+    padding: 1.5rem;
+    order: 1;
+  }
+
+  .headerSection h1 {
+    font-size: 2rem;
+  }
+
+  .headerSection p {
+    font-size: 1rem;
+  }
+
+  /* Ensure property cards stack nicely */
+  .propertyGrid > * {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .resultsSection {
+    order: 3;
   }
 }
