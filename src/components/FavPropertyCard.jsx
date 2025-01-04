@@ -5,7 +5,7 @@ import styles from './FavPropertyCard.module.css';
 
 function FavPropertyCard({ property }) {
   const { toggleFavorite } = useFavorites();
-  const { id, type, bedrooms, price, location, picture } = property;
+  const { id, type, bedrooms, price, location, picture, tenure } = property;
 
   return (
     <div className={styles.card}>
@@ -14,7 +14,10 @@ function FavPropertyCard({ property }) {
       </div>
       <div className={styles.content}>
         <div className={styles.header}>
-          <h3 className={styles.price}>£{price.toLocaleString()}</h3>
+          <h3 className={styles.price}>
+            £{price.toLocaleString()}
+            {tenure === 'Leasehold' && <span className={styles.perMonth}> per month</span>}
+          </h3>
           <button 
             className={styles.favoriteButton}
             onClick={(e) => {

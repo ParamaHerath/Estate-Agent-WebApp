@@ -93,4 +93,10 @@
 
 .viewButton:hover {
   background-color: #2980b9;
+}
+
+.perMonth {
+  font-size: 0.7em;
+  color: #7f8c8d;
+  margin-left: 4px;
 } 

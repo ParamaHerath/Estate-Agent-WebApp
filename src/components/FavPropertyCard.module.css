@@ -74,4 +74,10 @@
 
 .favoriteIcon {
   color: #e74c3c;
+}
+
+.perMonth {
+  font-size: 0.7em;
+  color: #7f8c8d;
+  margin-left: 4px;
 } 
