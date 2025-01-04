@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
-import { NumericFormat } from 'react-number-format';
 import { 
   Button, 
   Slider, 
   TextField,
   Box,
-  Typography 
+  Typography,
+  FormLabel
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,6 +15,7 @@ import styles from './SearchForm.module.css';
 
 function SearchForm({ onSearch }) {
   const [filters, setFilters] = useState({
+    availability: { value: 'any', label: 'Any' },
     type: { value: 'any', label: 'Any' },
     priceRange: [0, 2000000],
     minBedrooms: '',
@@ -23,6 +24,12 @@ function SearchForm({ onSearch }) {
     endDate: null,
     location: ''
   });
+
+  const availabilityOptions = [
+    { value: 'any', label: 'Any' },
+    { value: 'Freehold', label: 'For Sale' },
+    { value: 'Leasehold', label: 'For Rent' }
+  ];
 
   const propertyTypes = [
     { value: 'any', label: 'Any' },
@@ -41,6 +48,7 @@ function SearchForm({ onSearch }) {
     e.preventDefault();
     onSearch({
       ...filters,
+      availability: filters.availability.value,
       type: filters.type.value,
       minPrice: filters.priceRange[0],
       maxPrice: filters.priceRange[1]
@@ -49,8 +57,22 @@ function SearchForm({ onSearch }) {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      <Typography variant="body1">
+        Welcome to our filter search tool! Follow the steps below to narrow down your search and find the perfect property based on your preferences.
+      </Typography>
+      
       <div className={styles.formGroup}>
-        <Typography variant="subtitle1">Property Type</Typography>
+        <FormLabel>Availability</FormLabel>
+        <Select
+          value={filters.availability}
+          onChange={(option) => handleChange('availability', option)}
+          options={availabilityOptions}
+          className={styles.select}
+        />
+      </div>
+
+      <div className={styles.formGroup}>
+        <FormLabel>Property Type</FormLabel>
         <Select
           value={filters.type}
           onChange={(option) => handleChange('type', option)}
@@ -60,7 +82,7 @@ function SearchForm({ onSearch }) {
       </div>
 
       <div className={styles.formGroup}>
-        <Typography variant="subtitle1">Price Range</Typography>
+        <FormLabel>Price Range</FormLabel>
         <Box sx={{ width: '100%', padding: '0 10px' }}>
           <Slider
             value={filters.priceRange}
@@ -80,32 +102,30 @@ function SearchForm({ onSearch }) {
 
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
-          <Typography variant="subtitle1">Min Bedrooms</Typography>
-          <NumericFormat
-            customInput={TextField}
+          <FormLabel>Min Bedrooms</FormLabel>
+          <TextField
+            type="number"
             value={filters.minBedrooms}
-            onValueChange={(values) => handleChange('minBedrooms', values.value)}
-            allowNegative={false}
-            isAllowed={(values) => values.value <= 10}
-            placeholder="Min Bedrooms"
+            onChange={(e) => handleChange('minBedrooms', e.target.value)}
+            inputProps={{ min: "1" }}
+            fullWidth
           />
         </div>
         <div className={styles.formGroup}>
-          <Typography variant="subtitle1">Max Bedrooms</Typography>
-          <NumericFormat
-            customInput={TextField}
+          <FormLabel>Max Bedrooms</FormLabel>
+          <TextField
+            type="number"
             value={filters.maxBedrooms}
-            onValueChange={(values) => handleChange('maxBedrooms', values.value)}
-            allowNegative={false}
-            isAllowed={(values) => values.value <= 10}
-            placeholder="Max Bedrooms"
+            onChange={(e) => handleChange('maxBedrooms', e.target.value)}
+            inputProps={{ min: "1" }}
+            fullWidth
           />
         </div>
       </div>
 
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
-          <Typography variant="subtitle1">Start Date</Typography>
+          <FormLabel>Start Date</FormLabel>
           <DatePicker
             selected={filters.startDate}
             onChange={(date) => handleChange('startDate', date)}
@@ -117,7 +137,7 @@ function SearchForm({ onSearch }) {
           />
         </div>
         <div className={styles.formGroup}>
-          <Typography variant="subtitle1">End Date</Typography>
+          <FormLabel>End Date</FormLabel>
           <DatePicker
             selected={filters.endDate}
             onChange={(date) => handleChange('endDate', date)}
@@ -132,7 +152,7 @@ function SearchForm({ onSearch }) {
       </div>
 
       <div className={styles.formGroup}>
-        <Typography variant="subtitle1">Location/Postcode Area</Typography>
+        <FormLabel>Location or Postcode Area</FormLabel>
         <TextField
           fullWidth
           name="location"
