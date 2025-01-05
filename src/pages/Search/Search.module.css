@@ -94,7 +94,7 @@
     gap: 25px;
   }
 
-  /* Make cards take full width but maintain max-width for larger screens */
+  /* Making cards take full width but maintain max-width for larger screens */
   .propertyGrid > * {
     max-width: 100%;
     margin: 0 auto;
@@ -135,43 +135,7 @@
     font-size: 1rem;
   }
 
-  /* Ensure property cards stack nicely */
-  .propertyGrid > * {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .resultsSection {
-    order: 3;
-  }
-}@media (max-width: 768px) {
-  .layout {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .sidebar {
-    width: 100%;
-    order: 2;
-    border-right: none;
-    border-top: 1px solid #dee2e6;
-  }
-
-  .mainContent {
-    max-width: 100%;
-    padding: 1.5rem;
-    order: 1;
-  }
-
-  .headerSection h1 {
-    font-size: 2rem;
-  }
-
-  .headerSection p {
-    font-size: 1rem;
-  }
-
-  /* Ensure property cards stack nicely */
+  /* Ensuring property cards stack nicely */
   .propertyGrid > * {
     width: 100%;
     max-width: 400px;
@@ -181,3 +145,4 @@
     order: 3;
   }
 }
+
