@@ -1,15 +1,17 @@
+// Page for detailed view  of each individual property listing
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Tabs, Tab, Box } from '@mui/material';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import propertyData from '../assets/properties.json';
-import { useFavorites } from '../context/FavoritesContext';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import propertyData from '../../assets/properties.json';
+import { useFavourites } from '../../context/FavContext/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from './PropertyProfile.module.css';
-import PropertyMap from '../components/PropertyMap';
+import PropertyMap from '../../components/PropertyMap/PropertyMap';
 
+// Reusable tab panel component for content sections
 function TabPanel({ children, value, index }) {
   return (
     <div hidden={value !== index} className={styles.tabPanel}>
@@ -19,19 +21,26 @@ function TabPanel({ children, value, index }) {
 }
 
 function PropertyProfile() {
+  // State for active tab and selected image in gallery
   const [tabValue, setTabValue] = useState(0);
   const [selectedImage, setSelectedImage] = useState(0);
+  
+  // Get property ID from URL parameters
   const { id } = useParams();
+  // Find the property data matching the ID
   const property = propertyData.properties.find(p => p.id === id);
-  const { isFavorite, toggleFavorite } = useFavorites();
+  // Get favorite functionality from context
+  const { isFavorite, toggleFavorite } = useFavourites();
 
-  // Generate array of image paths
+  // Generate array of image paths for the property gallery
   const images = Array.from({ length: 8 }, (_, i) => `src/assets/images/${property.id}/pic${i + 1}.jpeg`);
 
+  // Show error if property not found
   if (!property) {
     return <div>Error! - Property not found!</div>
   }
 
+  // Handler for tab changes
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
@@ -41,14 +50,19 @@ function PropertyProfile() {
       <Header />
       <div className={styles.page}>
         <div className={styles.container}>
+          {/* Back navigation */}
           <div>
             <Link to="/search" className={styles.backLink}>⬅ Back to Search</Link>
           </div>
           
+          {/* Main property card with images and basic info */}
           <div className={styles.propertyCard}>
+            {/* Image gallery section */}
             <div className={styles.imageSection}>
+              {/* Main image display */}
               <div className={styles.mainImageContainer}>
                 <img src={`/${images[selectedImage]}`} alt={`Main view of ${property.id}`} />
+                {/* Favorite toggle button */}
                 <button 
                   className={styles.favoriteButton}
                   onClick={() => toggleFavorite(property)}
@@ -60,6 +74,7 @@ function PropertyProfile() {
                   )}
                 </button>
               </div>
+              {/* Thumbnail strip for image selection */}
               <div className={styles.thumbnailStrip}>
                 {images.map((image, index) => (
                   <div 
@@ -72,6 +87,7 @@ function PropertyProfile() {
                 ))}
               </div>
             </div>
+            {/* Basic property information */}
             <div className={styles.mainInfo}>
               <h2 className={styles.price}>
                 £{property.price.toLocaleString()}
@@ -83,7 +99,9 @@ function PropertyProfile() {
             </div>
           </div>
 
+          {/* Tabbed content section */}
           <div className={styles.tabsContainer}>
+            {/* Tab navigation */}
             <Box sx={{ borderBottom: '1rem', borderColor: 'divider' }}>
               <Tabs
                 value={tabValue}
@@ -102,6 +120,7 @@ function PropertyProfile() {
                   }
                 }}
               >
+                {/* Description tab */}
                 <Tab 
                   label="Description" 
                   sx={{
@@ -119,6 +138,7 @@ function PropertyProfile() {
                     }
                   }} 
                 />
+                {/* Floor plan tab */}
                 <Tab 
                   label="Floor Plan" 
                   sx={{
@@ -136,6 +156,7 @@ function PropertyProfile() {
                     }
                   }}
                 />
+                {/* Map location tab */}
                 <Tab 
                   label="Map" 
                   sx={{
@@ -156,6 +177,7 @@ function PropertyProfile() {
               </Tabs>
             </Box>
 
+            {/* Tab content panels */}
             <TabPanel value={tabValue} index={0}>
               <div className={styles.description}>
                 {property.description}

@@ -5,10 +5,13 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.footerContent}>
+
+          {/* Footer sections with links to different pages or dummy links that are not part of the coursework */}
+          
           <div className={styles.footerSection}>
             <h3>Sitemap</h3>
             <ul>
-              <li><a href="/">Home Page</a></li>
+              <li><a href="/">Home Page</a></li> 
               <li><a href="/search">Search Properties</a></li>
               <li><a href="/">About Us</a></li>
               <li><a href="/">Our Agents</a></li>
@@ -18,10 +21,10 @@ function Footer() {
           <div className={styles.footerSection}>
             <h3>Privacy Policy</h3>
             <ul>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/terms">Terms of Service</a></li>
-              <li><a href="/cookies">Cookie Policy</a></li>
-              <li><a href="/gdpr">GDPR Compliance</a></li>
+              <li><a href="/">Privacy Policy</a></li>
+              <li><a href="/">Terms of Service</a></li>
+              <li><a href="/">Cookie Policy</a></li>
+              <li><a href="/">GDPR Compliance</a></li>
             </ul>
           </div>
 

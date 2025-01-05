@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import FavoritesDropdown from './FavoritesDropdown';
+import FavDropdown from '../FavDropdown/FavDropdown';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './Header.module.css';
 
 function Header() {
-  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
+  // State to control whether the favourites dropdown is open or closed
+  const [isFavouritesOpen, setIsFavouritesOpen] = useState(false);
 
   return (
     <header className={styles.header}>
@@ -19,18 +20,22 @@ function Header() {
             <span className={styles.linkText}>Browse</span>
             <SearchIcon className={styles.icon} />
           </Link>
+          
+          {/* Button to toggle the favourites dropdown */}
           <button 
-            className={`${styles.navLink} ${styles.favoritesButton}`}
-            onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
+            className={`${styles.navLink} ${styles.favouritesButton}`}
+            onClick={() => setIsFavouritesOpen(!isFavouritesOpen)}
           >
             <span className={styles.linkText}>Favourites</span>
             <FavoriteIcon className={styles.icon} />
           </button>
         </nav>
       </div>
-      <FavoritesDropdown 
-        isOpen={isFavoritesOpen} 
-        onClose={() => setIsFavoritesOpen(false)} 
+
+      {/* Conditionally rendering the FavDropdown based on the isFavouritesOpen state */}
+      <FavDropdown 
+        isOpen={isFavouritesOpen} 
+        onClose={() => setIsFavouritesOpen(false)} 
       />
     </header>
   );
