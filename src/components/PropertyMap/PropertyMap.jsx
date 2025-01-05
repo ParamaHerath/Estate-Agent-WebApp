@@ -1,3 +1,4 @@
+// Component for displaying a Google Map with a marker for a property
 import { GoogleMap, MarkerF } from '@react-google-maps/api';
 
 function PropertyMap({ coordinates }) {

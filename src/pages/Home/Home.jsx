@@ -1,3 +1,4 @@
+// Home page component that displays a banner and a link to the search page
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';

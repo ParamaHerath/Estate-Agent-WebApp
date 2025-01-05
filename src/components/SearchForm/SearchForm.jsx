@@ -14,6 +14,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import styles from './SearchForm.module.css';
 
 function SearchForm({ onSearch }) {
+  // Initialize form state with default values
   const [filters, setFilters] = useState({
     availability: { value: 'any', label: 'Any' },
     type: { value: 'any', label: 'Any' },
@@ -25,18 +26,21 @@ function SearchForm({ onSearch }) {
     location: ''
   });
 
+  // Predefined options for property availability (sale/rent)
   const availabilityOptions = [
     { value: 'any', label: 'Any' },
     { value: 'Freehold', label: 'For Sale' },
     { value: 'Leasehold', label: 'For Rent' }
   ];
 
+  // Predefined options for property types
   const propertyTypes = [
     { value: 'any', label: 'Any' },
     { value: 'House', label: 'House' },
     { value: 'Flat', label: 'Flat' }
   ];
 
+  // Generic handler for updating form state
   const handleChange = (name, value) => {
     setFilters(prev => ({
       ...prev,
@@ -44,8 +48,10 @@ function SearchForm({ onSearch }) {
     }));
   };
 
+  // Form submission handling
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Extracting necessary values before sending them to the parent component
     onSearch({
       ...filters,
       availability: filters.availability.value,
@@ -61,6 +67,7 @@ function SearchForm({ onSearch }) {
         Use the filters below to match your preferences & find your dream home!.
       </Typography>
       
+      {/* Availability filter (sale/rent) */}
       <div className={styles.formGroup}>
         <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
           Offer Type
@@ -99,6 +106,7 @@ function SearchForm({ onSearch }) {
         />
       </div>
 
+      {/* Property type filter */}
       <div className={styles.formGroup}>
         <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
           Property Type
@@ -137,6 +145,7 @@ function SearchForm({ onSearch }) {
         />
       </div>
 
+      {/* Price range slider */}
       <div className={styles.formGroup}>
         <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
           Price Range
@@ -162,6 +171,7 @@ function SearchForm({ onSearch }) {
         </Box>
       </div>
 
+      {/* Bedroom range inputs */}
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
           <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
@@ -203,6 +213,7 @@ function SearchForm({ onSearch }) {
         </div>
       </div>
 
+      {/* Date range filters */}
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
           <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
@@ -218,21 +229,18 @@ function SearchForm({ onSearch }) {
             dateFormat="dd/MM/yyyy"
             customInput={
               <TextField
-                // fullWidth
                 sx={{
                   width: '100%',
                   '& .MuiOutlinedInput-root': {
                     fontFamily: 'Poppins',
                     fontWeight: '600',
                     borderRadius: '0.5rem',
-                    // width: '100%'
                   }
                 }}
               />
             }
           />
           </div>
-          
         </div>
         <div className={styles.formGroup}>
           <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
@@ -262,6 +270,7 @@ function SearchForm({ onSearch }) {
         </div>
       </div>
 
+      {/* Location search input */}
       <div className={styles.formGroup}>
         <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
           Location or Postcode Area
@@ -282,6 +291,7 @@ function SearchForm({ onSearch }) {
         />
       </div>
 
+      {/* Search submit button */}
       <Button 
         type="submit"
         variant="contained"

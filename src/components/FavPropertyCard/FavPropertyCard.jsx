@@ -4,6 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './FavPropertyCard.module.css';
 
 function FavPropertyCard({ property, onClose }) {
+  // Getting favorite functionality from context
   const { toggleFavorite } = useFavourites();
   const { id, type, bedrooms, price, location, picture, tenure } = property;
 
@@ -12,7 +13,7 @@ function FavPropertyCard({ property, onClose }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        {/* <img src={picture} alt={`Property ${id}`} className={styles.image} /> */}
+        {/* Ensuring the image path is correctly formatted, removing the leading slash if it exists */}
         <img src={`/${imagePath}`} alt={`Property ${id}`} className={styles.image} />
       </div>
       <div className={styles.content}>
@@ -33,6 +34,7 @@ function FavPropertyCard({ property, onClose }) {
         </div>
         <p className={styles.type}>{type} - {bedrooms} bedrooms</p>
         <p className={styles.location}>{location}</p>
+        {/* Link to view detailed property page, passing the property ID in the URL */}
         <Link 
           to={`/property/${id}`} 
           className={styles.viewButton}
