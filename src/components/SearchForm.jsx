@@ -206,7 +206,7 @@ function SearchForm({ onSearch }) {
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
           <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
-            Start Date
+            Added After
           </FormLabel>
           <div style={{ width: '100%' }}>
           <DatePicker
@@ -236,7 +236,7 @@ function SearchForm({ onSearch }) {
         </div>
         <div className={styles.formGroup}>
           <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
-            End Date
+            Added Before
           </FormLabel>
           <DatePicker
             selected={filters.endDate}
