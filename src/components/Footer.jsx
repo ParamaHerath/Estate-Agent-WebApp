@@ -8,10 +8,10 @@ function Footer() {
           <div className={styles.footerSection}>
             <h3>Sitemap</h3>
             <ul>
-              <li><a href="/">Home</a></li>
+              <li><a href="/">Home Page</a></li>
               <li><a href="/search">Search Properties</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/agents">Our Agents</a></li>
+              <li><a href="/">About Us</a></li>
+              <li><a href="/">Our Agents</a></li>
             </ul>
           </div>
 
@@ -31,7 +31,7 @@ function Footer() {
               <li>123, Oak Street</li>
               <li>Manchester M1 1AB, UK</li>
               <li>Phone: +44123456789</li>
-              <li>Email: info@estateagent.com</li>
+              <li>Email: <a href='mailto:info@nestquest.uk' className={styles.emailLink}> mailto:info@nestquest.uk </a></li>
             </ul>
           </div>
 

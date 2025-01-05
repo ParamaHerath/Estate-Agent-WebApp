@@ -59,6 +59,8 @@
   border-radius: 4px;
   margin-top: 1rem;
   align-self: flex-start;
+  width: 100%;
+  text-align: center;
 }
 
 .viewButton:hover {
