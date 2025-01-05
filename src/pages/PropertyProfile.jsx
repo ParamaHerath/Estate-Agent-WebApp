@@ -52,7 +52,7 @@ function PropertyProfile() {
       <div className={styles.page}>
         <div className={styles.container}>
           <div>
-            <Link to="/search" className={styles.backLink}>⬅️ Back to Search</Link>
+            <Link to="/search" className={styles.backLink}>⬅ Back to Search</Link>
           </div>
           
           <div className={styles.propertyCard}>
