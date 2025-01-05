@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FavoritesDropdown from './FavoritesDropdown';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './Header.module.css';
 
 function Header() {
@@ -13,12 +15,16 @@ function Header() {
           NestQuest
         </Link>
         <nav className={styles.nav}>
-          <Link to="/search" className={styles.navLink}>Browse</Link>
+          <Link to="/search" className={styles.navLink}>
+            <span className={styles.linkText}>Browse</span>
+            <SearchIcon className={styles.icon} />
+          </Link>
           <button 
-            className={styles.navLink} 
-            onClick={() => setIsFavoritesOpen(true)}
+            className={`${styles.navLink} ${styles.favoritesButton}`}
+            onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
           >
-            Favourites
+            <span className={styles.linkText}>Favourites</span>
+            <FavoriteIcon className={styles.icon} />
           </button>
         </nav>
       </div>
