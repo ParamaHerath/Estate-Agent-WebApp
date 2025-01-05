@@ -58,6 +58,7 @@
   align-self: flex-start;
   width: 100%;
   text-align: center;
+  border-radius: 0.5rem;
 }
 
 .viewButton:hover {
