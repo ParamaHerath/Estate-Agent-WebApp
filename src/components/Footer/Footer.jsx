@@ -34,7 +34,7 @@ function Footer() {
               <li>123, Oak Street</li>
               <li>Manchester M1 1AB, UK</li>
               <li>Phone: +44123456789</li>
-              <li>Email: <a href='mailto:info@nestquest.uk' className={styles.emailLink}> mailto:info@nestquest.uk </a></li>
+              <li>Email: <a href='mailto:info@nestquest.uk' className={styles.emailLink}> info@nestquest.uk </a></li>
             </ul>
           </div>
 
