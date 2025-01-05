@@ -20,8 +20,8 @@ function Header() {
             <SearchIcon className={styles.icon} />
           </Link>
           <button 
-            className={styles.navLink} 
-            onClick={() => setIsFavoritesOpen(true)}
+            className={`${styles.navLink} ${styles.favoritesButton}`}
+            onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
           >
             <span className={styles.linkText}>Favourites</span>
             <FavoriteIcon className={styles.icon} />

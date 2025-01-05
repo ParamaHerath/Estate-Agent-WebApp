@@ -9,6 +9,10 @@ function FavoritesDropdown({ isOpen, onClose }) {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (event.target.closest('button')?.classList.contains(styles.favoritesButton)) {
+        return;
+      }
+      
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         onClose();
       }
