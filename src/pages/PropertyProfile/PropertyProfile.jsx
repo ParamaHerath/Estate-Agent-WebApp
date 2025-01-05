@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Tabs, Tab, Box } from '@mui/material';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import propertyData from '../assets/properties.json';
-import { useFavourites } from '../context/FavContext';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import propertyData from '../../assets/properties.json';
+import { useFavourites } from '../../context/FavContext/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from './PropertyProfile.module.css';
-import PropertyMap from '../components/PropertyMap';
+import PropertyMap from '../../components/PropertyMap/PropertyMap';
 
 function TabPanel({ children, value, index }) {
   return (

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import SearchForm from '../components/SearchForm';
-import PropertyCard from '../components/PropertyCard';
-import propertiesData from '../assets/properties.json';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import SearchForm from '../../components/SearchForm/SearchForm';
+import PropertyCard from '../../components/PropertyCard/PropertyCard';
+import propertiesData from '../../assets/properties.json';
 import styles from './Search.module.css';
 
 function Search() {

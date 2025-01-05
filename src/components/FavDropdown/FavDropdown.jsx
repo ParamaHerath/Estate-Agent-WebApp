@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { useFavourites } from '../context/FavContext';
-import FavPropertyCard from './FavPropertyCard';
+import { useFavourites } from '../../context/FavContext/FavContext';
+import FavPropertyCard from '../FavPropertyCard/FavPropertyCard';
 import styles from './FavDropdown.module.css';
 
 function FavDropdown({ isOpen, onClose }) {

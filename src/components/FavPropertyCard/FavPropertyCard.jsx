@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useFavourites } from '../context/FavContext';
+import { useFavourites } from '../../context/FavContext/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './FavPropertyCard.module.css';
 

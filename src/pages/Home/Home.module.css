@@ -1,6 +1,6 @@
 .banner {
   margin-top: 5rem;
-  background-image: url('../assets/images/banner.png');
+  background-image: url('../../assets/images/banner.png');
   background-size: cover;
   background-position: center;
   min-height: calc(100vh - 5rem);
@@ -70,7 +70,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .banner {
-    background-image: url('../assets/images/banner-mobile.png');
+    background-image: url('../../assets/images/banner-mobile.png');
   }
 
   .container {

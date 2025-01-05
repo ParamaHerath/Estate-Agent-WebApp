@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import FavDropdown from './FavDropdown';
+import FavDropdown from '../FavDropdown/FavDropdown';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './Header.module.css';

@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { LoadScript } from '@react-google-maps/api'
-import Home from './pages/Home'
-import Search from './pages/Search'
-import Property from './pages/PropertyProfile'
-import { FavouritesProvider } from './context/FavContext'
+import Home from './pages/Home/Home'
+import Search from './pages/Search/Search'
+import Property from './pages/PropertyProfile/PropertyProfile'
+import { FavouritesProvider } from './context/FavContext/FavContext'
 
 function App() {
   return (
