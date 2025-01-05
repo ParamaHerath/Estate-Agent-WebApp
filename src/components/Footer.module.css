@@ -22,7 +22,7 @@
   padding: 0 1rem;
 }
 
-/* Make the socials section narrower */
+/* Making the socials section narrower */
 .footerSection:last-child {
   flex: 0.7;
 }
@@ -40,6 +40,10 @@
 
 .footerSection li {
   margin-bottom: 0.5rem;
+}
+
+.footerSection .emailLink {
+  color: black;
 }
 
 .footerSection a {
@@ -93,16 +97,22 @@
   }
 }
 
-/* Mobile - existing styles */
+/* Mobile */
 @media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
   .footerContent {
     flex-direction: column;
     text-align: center;
+    padding: 0 1rem;
   }
 
   .footerSection {
     margin-bottom: 1.5rem;
     flex: 100%;
+    padding: 0;
   }
 
   .footerSection:last-child {
@@ -112,5 +122,11 @@
   .socialIcons {
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright {
+    padding: 2rem 1rem 0;
   }
 }
