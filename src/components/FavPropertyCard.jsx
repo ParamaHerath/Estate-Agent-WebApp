@@ -7,10 +7,13 @@ function FavPropertyCard({ property }) {
   const { toggleFavorite } = useFavorites();
   const { id, type, bedrooms, price, location, picture, tenure } = property;
 
+  const imagePath = picture.startsWith('/') ? picture.slice(1) : picture;
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img src={picture} alt={`Property ${id}`} className={styles.image} />
+        {/* <img src={picture} alt={`Property ${id}`} className={styles.image} /> */}
+        <img src={`/${imagePath}`} alt={`Property ${id}`} className={styles.image} />
       </div>
       <div className={styles.content}>
         <div className={styles.header}>
