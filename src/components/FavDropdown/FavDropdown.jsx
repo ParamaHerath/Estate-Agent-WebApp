@@ -48,7 +48,7 @@ function FavDropdown({ isOpen, onClose }) {
             <p className={styles.noFavourites}>No favourites added yet</p>
           ) : (
             favourites.map(property => (
-              <FavPropertyCard key={property.id} property={property} />
+              <FavPropertyCard key={property.id} property={property} onClose={onClose} />
             ))
           )}
         </div>

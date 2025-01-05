@@ -3,7 +3,7 @@ import { useFavourites } from '../../context/FavContext/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './FavPropertyCard.module.css';
 
-function FavPropertyCard({ property }) {
+function FavPropertyCard({ property, onClose }) {
   const { toggleFavorite } = useFavourites();
   const { id, type, bedrooms, price, location, picture, tenure } = property;
 
@@ -33,7 +33,11 @@ function FavPropertyCard({ property }) {
         </div>
         <p className={styles.type}>{type} - {bedrooms} bedrooms</p>
         <p className={styles.location}>{location}</p>
-        <Link to={`/property/${id}`} className={styles.viewButton}>
+        <Link 
+          to={`/property/${id}`} 
+          className={styles.viewButton}
+          onClick={onClose}
+        >
           View Property
         </Link>
       </div>
