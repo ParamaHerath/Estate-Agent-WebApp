@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useFavorites } from '../context/FavoritesContext';
+import { useFavourites } from '../context/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from './PropertyCard.module.css';
 
 function PropertyCard({ property }) {
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const { isFavorite, toggleFavorite } = useFavourites();
   const { id, type, bedrooms, price, location, picture, added, tenure } = property;
 
   return (

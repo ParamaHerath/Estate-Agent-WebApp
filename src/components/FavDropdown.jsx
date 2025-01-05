@@ -1,15 +1,15 @@
 import { useRef, useEffect } from 'react';
-import { useFavorites } from '../context/FavoritesContext';
+import { useFavourites } from '../context/FavContext';
 import FavPropertyCard from './FavPropertyCard';
-import styles from './FavoritesDropdown.module.css';
+import styles from './FavDropdown.module.css';
 
-function FavoritesDropdown({ isOpen, onClose }) {
-  const { favorites, setFavorites } = useFavorites();
+function FavDropdown({ isOpen, onClose }) {
+  const { favourites, setFavourites } = useFavourites();
   const dropdownRef = useRef();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (event.target.closest('button')?.classList.contains(styles.favoritesButton)) {
+      if (event.target.closest('button')?.classList.contains(styles.favouritesButton)) {
         return;
       }
       
@@ -34,20 +34,20 @@ function FavoritesDropdown({ isOpen, onClose }) {
       <div ref={dropdownRef} className={styles.dropdown}>
         <div className={styles.header}>
           <h2>Favourites</h2>
-          {favorites.length > 0 && (
+          {favourites.length > 0 && (
             <button 
               className={styles.clearButton}
-              onClick={() => setFavorites([])}
+              onClick={() => setFavourites([])}
             >
               Clear All
             </button>
           )}
         </div>
         <div className={styles.content}>
-          {favorites.length === 0 ? (
-            <p className={styles.noFavorites}>No favorites added yet</p>
+          {favourites.length === 0 ? (
+            <p className={styles.noFavourites}>No favourites added yet</p>
           ) : (
-            favorites.map(property => (
+            favourites.map(property => (
               <FavPropertyCard key={property.id} property={property} />
             ))
           )}
@@ -57,4 +57,4 @@ function FavoritesDropdown({ isOpen, onClose }) {
   );
 }
 
-export default FavoritesDropdown; 
+export default FavDropdown; 

@@ -4,7 +4,7 @@ import { Tabs, Tab, Box } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import propertyData from '../assets/properties.json';
-import { useFavorites } from '../context/FavoritesContext';
+import { useFavourites } from '../context/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from './PropertyProfile.module.css';
@@ -23,7 +23,7 @@ function PropertyProfile() {
   const [selectedImage, setSelectedImage] = useState(0);
   const { id } = useParams();
   const property = propertyData.properties.find(p => p.id === id);
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const { isFavorite, toggleFavorite } = useFavourites();
 
   // Generate array of image paths
   const images = Array.from({ length: 8 }, (_, i) => `src/assets/images/${property.id}/pic${i + 1}.jpeg`);

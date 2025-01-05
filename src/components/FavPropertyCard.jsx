@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useFavorites } from '../context/FavoritesContext';
+import { useFavourites } from '../context/FavContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './FavPropertyCard.module.css';
 
 function FavPropertyCard({ property }) {
-  const { toggleFavorite } = useFavorites();
+  const { toggleFavorite } = useFavourites();
   const { id, type, bedrooms, price, location, picture, tenure } = property;
 
   const imagePath = picture.startsWith('/') ? picture.slice(1) : picture;

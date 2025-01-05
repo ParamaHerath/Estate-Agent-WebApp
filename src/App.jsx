@@ -3,12 +3,12 @@ import { LoadScript } from '@react-google-maps/api'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Property from './pages/PropertyProfile'
-import { FavoritesProvider } from './context/FavoritesContext'
+import { FavouritesProvider } from './context/FavContext'
 
 function App() {
   return (
     <LoadScript googleMapsApiKey="AIzaSyDKJKDcTMgfwZ1tFT0EbrwPSNixIaB3GWw">
-      <FavoritesProvider>
+      <FavouritesProvider>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
             <Route path="/property/:id" element={<Property />} />
           </Routes>
         </Router>
-      </FavoritesProvider>
+      </FavouritesProvider>
     </LoadScript>
   )
 }
