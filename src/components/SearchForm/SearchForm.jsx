@@ -150,11 +150,12 @@ function SearchForm({ onSearch }) {
         <FormLabel sx={{fontFamily: 'Poppins', color: 'black !important'}}>
           Price Range
         </FormLabel>
-        <Box sx={{ width: '100%', padding: '0 10px' }}>
+        <Box sx={{ width: '85%', padding: '0 10px', margin: '0 auto'}}>
           <Slider
             value={filters.priceRange}
             onChange={(_, newValue) => handleChange('priceRange', newValue)}
             valueLabelDisplay="auto"
+            sx={{color: 'blue'}}
             min={0}
             max={2000000}
             step={5000}
