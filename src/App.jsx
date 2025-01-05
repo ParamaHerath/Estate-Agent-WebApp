@@ -4,12 +4,14 @@ import Home from './pages/Home/Home'
 import Search from './pages/Search/Search'
 import Property from './pages/PropertyProfile/PropertyProfile'
 import { FavouritesProvider } from './context/FavContext/FavContext'
+import ScrollToTop from './context/ScrollContext/ScrollToTop'
 
 function App() {
   return (
     <LoadScript googleMapsApiKey="AIzaSyDKJKDcTMgfwZ1tFT0EbrwPSNixIaB3GWw">
       <FavouritesProvider>
         <Router>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
