@@ -298,7 +298,16 @@ function SearchForm({ onSearch }) {
         size="large"
         startIcon={<SearchIcon />}
         fullWidth
-        sx={{fontFamily: 'Poppins', marginTop: '1rem', fontWeight: '600', backgroundColor: 'blue', borderRadius: '0.5rem'}}
+        sx={{
+          fontFamily: 'Poppins', 
+          marginTop: '1rem', 
+          fontWeight: '600', 
+          backgroundColor: 'blue', 
+          borderRadius: '0.5rem',
+          '&:hover': {
+            backgroundColor: '#0000b7'
+          }
+        }}
       >
         Search Properties
       </Button>
