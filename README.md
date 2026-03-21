@@ -1,19 +1,67 @@
-# NestQuest-WebApp
+# NestQuest Web App
 
-This is a client-side, estate-agent web application that enables users to search/filter and view properties.
+NestQuest is a client-side estate agent web app for browsing, searching, filtering, and viewing property listings.
 
-The application is built using HTML, CSS and JS, along with the React Library.
+Built with:
 
-# How to set up and run the Web App
+- React
+- Vite
+- React Router
+- Material UI
+- Google Maps React API
 
-Ensure you have installed npm (Node Package Manager) and added it to path.
+## Prerequisites
 
-This project has external dependencies so you have to install them via npm, before atttempting to run the application. The detailed steps are as follows:
+Make sure these are installed before running the app:
 
-Clone the repository and open terminal in the project folder.
-Run npm install
-Run npm run dev
-Ctrl + Click on the provided link
-The Web Application will open in your default browser.
+- Node.js 18 or newer
+- npm (comes with Node.js)
 
-Running npm install will generate the node_modules and all the dependencies, allowing you to run the application.
+Check versions:
+
+```bash
+node -v
+npm -v
+```
+
+## Run Locally
+
+1. Clone the repository.
+2. Open a terminal in the project root.
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+5. Open the local URL shown in the terminal (usually http://localhost:5173).
+
+## Available Scripts
+
+- `npm run dev`: Start Vite dev server with hot reload.
+- `npm run build`: Create a production build in the `dist` folder.
+- `npm run preview`: Preview the production build locally.
+- `npm run lint`: Run ESLint.
+
+## Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Notes
+
+- Property data is currently loaded from local JSON in `src/assets/properties.json`.
+- The app includes Google Maps support for property location display.
+
+## Troubleshooting
+
+- If `npm install` fails, delete `node_modules` and `package-lock.json`, then run `npm install` again.
+- If the dev server port is busy, Vite may choose a different port automatically. Use the URL printed in the terminal.
